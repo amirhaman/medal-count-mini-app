@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -11,7 +12,11 @@ export default function Home() {
           width={180}
           height={38}
           priority
+          style={{ height: 'auto', width: 'auto' }}
         />
+        <Link href="/medals" className="text-blue-500 hover:underline">
+          Go to Medal Count Mini App
+        </Link>
       </main>
     </div>
   );

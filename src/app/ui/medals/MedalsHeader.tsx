@@ -28,15 +28,14 @@ const columns: Column[] = [
 ];
 
 const MedalsHeader = () => {
-  const { setSort } = useMedalContext();
-
+  const { setSort, currentSortKey } = useMedalContext();
   return (
     <thead>
       <tr className="bg-gray-100 text-gray-700 text-sm">
         {columns.map((col) => (
           <th
             key={col.key}
-            className="py-1 px-2 text-center cursor-pointer hover:bg-gray-200"
+            className={`py-1 px-2 text-center cursor-pointer hover:bg-gray-200 ${currentSortKey === col.key ? 'border-t-4' : ''}`}
             onClick={() => setSort(col.key)}
           >
             <div className="flex justify-center">
