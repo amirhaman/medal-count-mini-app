@@ -1,10 +1,9 @@
 import path from "path";
 import { promises as fs } from "fs";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
-  const searchParams = req.nextUrl.searchParams;
-  console.log("searchParams", searchParams);
+export async function GET() {
+  
   try {
     // I have used path and file system to fetch the data. this will be replaced with actuall API call.
     const filePath = path.join(process.cwd(), "src/db", "medals.json");
